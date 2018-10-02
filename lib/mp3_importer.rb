@@ -7,7 +7,12 @@ class MP3Importer
   end
 
   def files
-    Dir["#{path}/*.mp3"].map {|music| music[0,path.size] = ""}
+    Dir[path+"/*.mp3"].map {|music| music.split(path+"/")[1]}
+    # binding.pry
+  end
+
+  def import
+    files.each {|file| Song.new_by_filename(file)}
   end
 end
 # binding.pry

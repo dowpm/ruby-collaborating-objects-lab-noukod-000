@@ -28,6 +28,6 @@ class Artist
   end
 
   def print_songs
-    puts songs.map  {|song| song.title}.join("\n")
+    puts songs.map  {|song| song.name}.join("\n")
   end
 end
